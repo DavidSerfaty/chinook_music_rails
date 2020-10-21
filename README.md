@@ -23,10 +23,21 @@ Album.find_by(title: "Use Your Illusion II").artist
 
 ## Niveau Moyen
 Combien y a t'il d'albums dont le titre contient "Great" ? (indice)
+```bash
+Album.where("title like ?", 'Great %').count
+```
 Supprime tous les albums dont le nom contient "music".
+```bash
+Album.where("title like ?", '%music %').delete_all
+```
 Combien y a t'il d'albums écrits par AC/DC ?
+```bash
+Album.where("artist like ?", 'AC/DC').count
+```
 Combien de chanson durent exactement 158589 millisecondes ?
-
+```bash
+Track.where("duration like ?", 158589).count
+```
 
 ## Niveau Difficile
 Pour ces questions, tu vas devoir effectuer des boucles dans la console Rails. C'est peu commun mais c'est faisable, tout comme dans IRB.
