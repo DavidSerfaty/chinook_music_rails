@@ -37,13 +37,29 @@ Album.where("artist like ?", 'AC/DC').count
 Combien de chanson durent exactement 158589 millisecondes ?
 ```bash
 Track.where("duration like ?", 158589).count
+==> 0
 ```
 
 ## Niveau Difficile
 Pour ces questions, tu vas devoir effectuer des boucles dans la console Rails. C'est peu commun mais c'est faisable, tout comme dans IRB.
 
 puts en console tous les titres de AC/DC.
+```bash
+
+```
 puts en console tous les titres de l'album "Let There Be Rock".
+```bash
+
+```
 Calcule le prix total de cet album ainsi que sa durée totale.
+```bash
+
+```
 Calcule le coût de l'intégralité de la discographie de "Deep Purple".
+```bash
+
+```
 Modifie (via une boucle) tous les titres de "Eric Clapton" afin qu'ils soient affichés avec "Britney Spears" en artist.
+```bash
+
+```
