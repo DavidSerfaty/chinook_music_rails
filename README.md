@@ -45,21 +45,41 @@ Pour ces questions, tu vas devoir effectuer des boucles dans la console Rails. C
 
 puts en console tous les titres de AC/DC.
 ```bash
-
+tracks = Track.where("artist like ?", "AC/DC")
+tracks.each do |track|
+  puts track.title
+end
 ```
 puts en console tous les titres de l'album "Let There Be Rock".
 ```bash
-
+tracks = Track.where("album like ?", "Let There Be Rock")
+tracks.each do |track|
+  puts track.title
+end
 ```
 Calcule le prix total de cet album ainsi que sa durée totale.
 ```bash
-
+total_price = 0
+total_duration = 0
+tracks = Track.where("album like ?", "Let There Be Rock")
+tracks.each do |track|
+  total_price += track.price
+  total_duration += track.duration
+end
+  puts "Prix total : #{total_price} et durée total : #{total_duration}"
 ```
 Calcule le coût de l'intégralité de la discographie de "Deep Purple".
 ```bash
-
+total_price = 0
+tracks = Track.where("artist like ?", "Deep Purple")
+tracks.each do |track|
+  total_price += track.price
+end
+puts total_price
 ```
 Modifie (via une boucle) tous les titres de "Eric Clapton" afin qu'ils soient affichés avec "Britney Spears" en artist.
 ```bash
-
+Track.where("artist like ?", "Eric Clapton").each do |track|
+  track.update(artist: "Britney Spears")
+end
 ```
